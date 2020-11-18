@@ -1,3 +1,4 @@
+import 'package:beauty_flutter/card_recommend.dart';
 import 'package:beauty_flutter/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -46,26 +47,21 @@ class _ContentPageState extends State<ContentPager> {
           onPageChanged: widget.onPageChanged,
           controller: _pageController,
           children: <Widget>[
-            _wrapItem(0),
-            _wrapItem(1),
-            _wrapItem(2),
-            _wrapItem(3),
+            _wrapItem(CardRecommend()),
+            _wrapItem(CardRecommend()),
+            _wrapItem(CardRecommend()),
+            _wrapItem(CardRecommend()),
           ],
         ))
       ],
     );
   }
 
-  Widget _wrapItem(int index) {
-    return Padding(
-      padding: EdgeInsets.all(10),
-      child: Container(
-        decoration: BoxDecoration(color: _colors[index]),
-      ),
-    );
+  Widget _wrapItem(Widget widget) {
+    return Padding(padding: EdgeInsets.all(10), child: widget);
   }
 
-  _statusBar(){
+  _statusBar() {
     SystemUiOverlayStyle uiOverlayStyle = SystemUiOverlayStyle(
       systemNavigationBarColor: Color(0xFF000000),
       systemNavigationBarDividerColor: null,
