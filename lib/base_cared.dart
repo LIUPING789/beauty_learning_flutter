@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// basic 基类封装
 class BaseCared extends StatefulWidget {
   @override
   BaseCaredState createState() => BaseCaredState();
@@ -7,6 +8,7 @@ class BaseCared extends StatefulWidget {
 
 class BaseCaredState extends State<BaseCared> {
   Color subTitleColors = Colors.grey;
+  Color bottomTitleColors = Colors.lightBlue;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +24,15 @@ class BaseCaredState extends State<BaseCared> {
       ),
     );
   }
-
+/*头部组件封装*/
   topContent() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20, 26, 10, 20),
+      padding: EdgeInsets.fromLTRB(20, 26, 10, 12),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,//横轴对齐
         children: <Widget>[
           Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               topTitle(''),
               topTitle2(''),
@@ -44,7 +47,7 @@ class BaseCaredState extends State<BaseCared> {
   bottomContent() {
     return Container();
   }
-
+    /*头部副标题封*/
   Widget subTitle(String title) {
     return Padding(
       padding: EdgeInsets.only(top: 5),
@@ -54,7 +57,7 @@ class BaseCaredState extends State<BaseCared> {
       ),
     );
   }
-
+/*头部标题组件*/
   topTitle(String title) {
     return Text(
       title,
@@ -64,5 +67,8 @@ class BaseCaredState extends State<BaseCared> {
 
   topTitle2(String title) {
     return Container();
+  }
+  bottomTitle(String title){
+    return Text(title,style: TextStyle(fontSize: 12,color:bottomTitleColors ),);
   }
 }

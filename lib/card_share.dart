@@ -29,4 +29,30 @@ class _CardShareState extends BaseCaredState {
       ),
     );
   }
+
+  @override
+  bottomContent() {
+    return Expanded(
+        child: Container(
+      decoration: BoxDecoration(color: Colors.white12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          Expanded(
+            child: Padding(
+                padding: EdgeInsets.only(top: 20, left: 15, bottom: 20),
+                child: Image.network(
+                    "http://www.devio.org/io/flutter_beauty/card_list.png")),
+          ),
+          Container(
+            alignment: AlignmentDirectional.center,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: bottomTitle('2143243242人 ·参与活动'),
+            ),
+          )
+        ],
+      ),
+    ));
+  }
 }
