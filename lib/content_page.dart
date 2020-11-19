@@ -1,3 +1,4 @@
+import 'package:beauty_flutter/card_free.dart';
 import 'package:beauty_flutter/card_recommend.dart';
 import 'package:beauty_flutter/custom_appbar.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,7 @@ class _ContentPageState extends State<ContentPager> {
           children: <Widget>[
             _wrapItem(CardRecommend()),
             _wrapItem(CardShare()),
-            _wrapItem(CardRecommend()),
+            _wrapItem(CardFree()),
             _wrapItem(CardRecommend()),
           ],
         ))
