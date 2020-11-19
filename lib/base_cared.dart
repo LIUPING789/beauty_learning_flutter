@@ -6,8 +6,8 @@ class BaseCared extends StatefulWidget {
 }
 
 class BaseCaredState extends State<BaseCared> {
-
   Color subTitleColors = Colors.grey;
+
   @override
   Widget build(BuildContext context) {
     return PhysicalModel(
@@ -17,24 +17,28 @@ class BaseCaredState extends State<BaseCared> {
       child: Container(
         decoration: BoxDecoration(color: Colors.white),
         child: Column(
-          children: <Widget>[
-            topContent(),
-            bottomContent()
-          ],
+          children: <Widget>[topContent(), bottomContent()],
         ),
-      ),);
+      ),
+    );
   }
 
   topContent() {
-    return Padding(padding: EdgeInsets.fromLTRB(20, 26, 10, 10),
+    return Padding(
+      padding: EdgeInsets.fromLTRB(20, 26, 10, 20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Row(children: [
-            topTitle('')
-          ],),
+          Row(
+            children: [
+              topTitle(''),
+              topTitle2(''),
+            ],
+          ),
           subTitle('')
         ],
-      ),);
+      ),
+    );
   }
 
   bottomContent() {
@@ -42,12 +46,23 @@ class BaseCaredState extends State<BaseCared> {
   }
 
   Widget subTitle(String title) {
-    return Padding(padding: EdgeInsets.only(top: 5), child:Text(title,style: TextStyle(
-      fontSize: 11,color:subTitleColors
-    ),),);
+    return Padding(
+      padding: EdgeInsets.only(top: 5),
+      child: Text(
+        title,
+        style: TextStyle(fontSize: 11, color: subTitleColors),
+      ),
+    );
   }
 
   topTitle(String title) {
-    return Text(title,style: TextStyle(fontSize: 22,color: Colors.black87),);
+    return Text(
+      title,
+      style: TextStyle(fontSize: 22, color: Colors.black87),
+    );
+  }
+
+  topTitle2(String title) {
+    return Container();
   }
 }

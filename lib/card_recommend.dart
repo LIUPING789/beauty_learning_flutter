@@ -30,7 +30,8 @@ class _CardRecommendState extends BaseCaredState {
       child: Container(
         margin: EdgeInsets.only(top: 20),
           child: Image.network(
-              'http://www.devio.org/io/flutter_beauty/card_1.jpg',fit:BoxFit.cover,)),
+              'http://www.devio.org/io/flutter_beauty/card_1.jpg',fit:BoxFit.cover,))
+      ,
     );
   }
 }
