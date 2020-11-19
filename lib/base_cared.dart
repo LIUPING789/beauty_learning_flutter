@@ -69,6 +69,8 @@ class BaseCaredState extends State<BaseCared> {
     return Container();
   }
   bottomTitle(String title){
-    return Text(title,style: TextStyle(fontSize: 12,color:bottomTitleColors ),);
+    return Text(title,
+      textAlign: TextAlign.center,
+      style: TextStyle(fontSize: 12,color:bottomTitleColors ),);
   }
 }
